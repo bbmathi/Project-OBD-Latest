@@ -1,1 +1,6 @@
-pip install django
+boto3==1.18.10
+dj_database_url==0.5.0
+Django==3.2.5
+djangorestframework==3.12.4
+python-decouple==3.4
+unipath==1.1

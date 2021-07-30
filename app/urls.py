@@ -7,7 +7,6 @@ urlpatterns = [
 
     # The home page
     path('', views.index, name='home'),
-
     path('newPost', views.newPost),
     path('show',views.show),
     path('edit/<int:id>', views.edit),
