@@ -26,8 +26,11 @@
         var timestamp = jsonData.timestamp;
         var target = L.latLng(lat, lon);
         map.setView(target, 14);
-        L.marker(target).addTo(map);
-    }
+        var mark=L.marker(target).bindPopup("Tag_ID: "+imei).addTo(map);
+        mark.openPopup();
+
+                }
+
 
 function callAjax_1(){
             $.ajax({
