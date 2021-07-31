@@ -173,46 +173,7 @@ def destroyCar(request, id):
     post.delete()
     return redirect("/showCar")
 
-
-def chart(request):
-    # Create an object for the angualar gauge using the FusionCharts class constructor
-    angularGauge = fusioncharts.FusionCharts("angulargauge", "ex1", "450", "270", "chart-1", "json",
-                                             # The data is passed as a string in the `dataSource` as parameter.
-                                             """{  
-                                    "chart": {
-                                        "caption": "OBD RPM Value",
-                                        "lowerLimit": "0",
-                                        "upperLimit": "4000",
-                                        "showValue": "1",
-                                        "numberSuffix": " RPM",
-                                        "theme": "fusion",
-                                        "showToolTip": "0"
-                                    },
-                                    "colorRange": {
-                                        "color": [{
-                                            "minValue": "0",
-                                            "maxValue": "500",
-                                            "code": "#F2726F"
-                                        }, {
-                                            "minValue": "50",
-                                            "maxValue": "750",
-                                            "code": "#FFC533"
-                                        }, {
-                                            "minValue": "75",
-                                            "maxValue": "1000",
-                                            "code": "#62B58F"
-                                        }]
-                                    },
-                                    "dials": {
-                                        "dial": [{
-                                            "value": "1600"
-                                        }]
-                                    }
-                                }""")
-    # Alternatively, you can assign this string to a string variable in a separate JSON file
-    # and pass the URL of that file to the `dataSource` parameter.
-    return render(request, 'dashboard.html', {'output': angularGauge.render(), 'chartTitle': 'RPM'})
-
-
 def MapView(request):
-    return render(request, "map.html")
+    return render(request,"map.html")
+def chart(request):
+    return render(request,"dashboard.html")

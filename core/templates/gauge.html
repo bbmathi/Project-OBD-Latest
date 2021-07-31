@@ -1,0 +1,28 @@
+<html>
+   <head>
+      <meta charset="utf-8">
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+      <title>Sample Page</title>
+      <script>
+         var settings = {
+           "async": true,
+           "crossDomain": true,
+           "url": "http://127.0.0.1:8000/api/getlatlan_tag3",
+           "method": "GET"
+         }
+
+         $.ajax(settings).done(function (response) {
+           console.log(response);
+
+           var content = response.IMEI;
+           $("#windSpeed").append(content);
+
+         });
+         $("#windSpeed").append(content);
+      </script>
+   </head>
+   <body>
+      <h1>Sample Page</h1>
+      <div id="windSpeed">IMEI: </div>
+   </body>
+</html>
