@@ -2,7 +2,7 @@
 
 from django.contrib import admin
 from django.urls import path, include  # add this
-from webapp import views
+from webapp import views,SendEmail
 
 urlpatterns = [
             # Django admin route
@@ -12,6 +12,8 @@ urlpatterns = [
     path("api/getlatlan_tag1", views.MyApi_Tag1.as_view()),
     path("api/getlatlan_tag2", views.MyApi_Tag2.as_view()),
     path("api/getlatlan_tag3", views.MyApi_Tag3.as_view()),
-    path("api/RPM_tag1", views.MyApi_Rpm_Tag1.as_view())
+    path("api/RPM_tag1", views.MyApi_Rpm_Tag1.as_view()),
+    path("api/RPM_tag2", views.MyApi_Rpm_Tag2.as_view()),
+    #path("mail",SendEmail.reads3)
      ]
 
